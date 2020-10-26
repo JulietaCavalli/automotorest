@@ -13,4 +13,5 @@
 #  updated_at :datetime         not null
 #
 class Vehiculo < ApplicationRecord
+	validates :matricula, presence: true,  uniqueness: true
 end
