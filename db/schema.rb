@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_25_142302) do
+ActiveRecord::Schema.define(version: 2020_10_25_203203) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,13 @@ ActiveRecord::Schema.define(version: 2020_10_25_142302) do
     t.integer "ano"
     t.boolean "requerido"
     t.integer "precio"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "venta", force: :cascade do |t|
+    t.string "matricula"
+    t.string "ci"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
