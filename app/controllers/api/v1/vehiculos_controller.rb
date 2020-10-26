@@ -37,11 +37,13 @@ class Api::V1::VehiculosController < ApplicationController
 		# 						}
 		# 				}
 
-		# que hago con el precio?
 		@vehiculo = Vehiculo.new(ventas_params)
+		# que hago con el precio?
 		@vehiculo.precio = 9000
 		@vehiculo.requerido = true
 		if @vehiculo.save
+			# response = HTTParty.get("http://.../api/rest/v1/vehiculos?matricula=#{matricula}")
+			# @result = HTTParty.patch("https://.../api/rest/v1/vehiculos/:#{id}")
 			render json: {
 				data: {
 					type:'vehiculo',
