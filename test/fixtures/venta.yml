@@ -1,0 +1,18 @@
+# == Schema Information
+#
+# Table name: venta
+#
+#  id         :bigint           not null, primary key
+#  matricula  :string
+#  ci         :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  matricula: MyString
+  ci: MyString
+
+two:
+  matricula: MyString
+  ci: MyString
