@@ -1,6 +1,7 @@
 class Api::V1::VentasController < ApplicationController
 	def create
-		# datos = { data: {
+		# los parametros que llegan son del estilo
+		# { data: {
 		# 						type: "venta",
 		# 						relationship: {
 		# 							vehiculo: {
