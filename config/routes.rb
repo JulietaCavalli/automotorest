@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :vehiculos
-      get :reporte_vehiculo, controller: :vechiculos
+      get :reporte_vehiculo, controller: :vehiculos
       resources :ventas
     end
   end
