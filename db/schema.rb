@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_25_203203) do
+ActiveRecord::Schema.define(version: 2020_11_03_003136) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "propietarios", force: :cascade do |t|
+    t.string "nombre"
+    t.string "apellido"
+    t.string "ci"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "vehiculos", force: :cascade do |t|
     t.string "matricula"
