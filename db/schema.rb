@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_03_003136) do
+ActiveRecord::Schema.define(version: 2020_11_04_012301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2020_11_03_003136) do
     t.string "marca"
     t.string "modelo"
     t.integer "ano"
-    t.boolean "requerido"
     t.integer "precio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
