@@ -66,7 +66,7 @@ class Api::V1::VehiculosController < ApplicationController
 			response = HTTParty.get("https://tagsi-2020-sucive.herokuapp.com/vehiculos?filter[matricula]=#{ matricula }")
 			r = JSON.parse(response.to_json)
 			id_sucive = r["data"][0]["id"]
-			body = { data:{ type:'vehiculo', id: id, attributes: { propietario_id: 1 } } } # el propietario con id 1 es la automotora en la base del sucive
+			body = { data:{ type:'vehiculo', id: id_sucive, attributes: { propietario_id: 1 } } } # el propietario con id 1 es la automotora en la base del sucive
 			patch_sucive = HTTParty.patch("https://tagsi-2020-sucive.herokuapp.com/vehiculos/#{id_sucive}", { headers: { 'Content-Type' => 'application/vnd.api+json'}, body: body.to_json })
 			d = JSON.parse(patch_sucive.to_json)
 			if d["data"].blank?
@@ -82,6 +82,7 @@ class Api::V1::VehiculosController < ApplicationController
 						}
 					}
 				}
+			end
 		else
 			render json: { error: { status: 404, title: 'Oops! No se pudo crear el vehiculo.' } }
 		end
