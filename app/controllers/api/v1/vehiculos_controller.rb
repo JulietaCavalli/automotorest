@@ -78,7 +78,7 @@ class Api::V1::VehiculosController < ApplicationController
 						type:'vehiculo',
 						attributes: @vehiculo,
 						links: {
-							self: request.url
+							self: request.url+ "/#{ @vehiculo.id }"
 						}
 					}
 				}
