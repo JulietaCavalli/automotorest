@@ -15,6 +15,6 @@
 class Vehiculo < ApplicationRecord
 	validates :matricula, presence: true,  uniqueness: true
 	def testMethod
-		{type: 'vehiculo', id: self.id, attributes: { matricula:self.matricula, marca: self.marca, ano: self.ano, precio: self.precio}, links:{	self: $request.url + "/#{ self.id }"}}
+		{type: 'vehiculo', id: self.id, attributes: { matricula:self.matricula, marca: self.marca, modelo: self.modelo ,ano: self.ano, precio: self.precio}, links:{	self: $request.url + "/#{ self.id }"}}
 	end
 end
